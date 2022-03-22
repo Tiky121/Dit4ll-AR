@@ -1,37 +1,28 @@
-<!-- include A-Frame obviously -->
-<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-<!-- include ar.js for A-Frame -->
-<script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
-<script src="play-all-model-animations.js"></script>
-<script type='text/javascript' src='./aframe-ar-nft.js'></script>
-<script>
-  AFRAME.registerComponent('clicker', {
-      init: function() {
-          this.el.addEventListener('click', e => {
-              alert('Box clicked!');
-          });
-      }
-  });
-  </script>
-<body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs>
-    
-    <!-- create your content here. just a box for now -->
-    <!-- define a camera which will move according to the marker position -->
-      
-    
-      <a-marker preset='hiro'>
-        <a-entity gltf-model="./wind_turbine.glb" scale= "0.6 0.6 0.6" rotation = "-90 0 0" position="0 0 -0.8" play-all-model-animations></a-entity>
-      </a-marker>
-
-      <a-marker preset="custom" type="pattern" url="https://raw.githubusercontent.com/Tiky121/AR-Dit4ll/main/pattern-Wind.patt" position ="0 0 0">
-        <a-entity gltf-model="./monkey.glb" scale= "0.6 0.6 0.6" rotation = "-90 0 0" position="0 0 -1.6" play-all-model-animations></a-entity>
-      </a-marker>
-
-  </a-scene>
-
-  <div class="buttons">
-    <button class="say-hi-button"></button>
-  </div>
-
-</body>
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>AR.js Click Places Example</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script type='text/javascript' src='./aframe-ar-nft.js'></script>
+        <script>
+        AFRAME.registerComponent('clicker', {
+            init: function() {
+                this.el.addEventListener('click', e => {
+                    alert('Box clicked!');
+                });
+            }
+        });
+        </script>
+    </head>
+    <body>
+    <a-scene
+        vr-mode-ui="enabled: false"
+        cursor='rayOrigin: mouse'
+        raycaster='near: 0; far: 50000'
+        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
+        renderer='antialias: true; alpha: true'>
+            <a-camera gps-projected-camera='simulateLatitude: 51.049; simulateLongitude: -0.723' rotation-reader></a-camera>
+            <a-box gps-projected-entity-place='latitude: 51.0596; longitude: -0.7170' color='red' scale='400 400 400' clicker></a-box>
+    </a-scene>
+    </body>
+</html>
