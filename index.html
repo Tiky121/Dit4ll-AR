@@ -12,7 +12,37 @@
 <script type='text/javascript' src='./aframe-ar-nft.js'></script>
 <script src="gesture-detector.js"></script>
 <script src="gesture-handler.js"></script>
+
+<script>
+  window.addEventListener('camera-init', (data) => {
+      console.log('camera-init', data);
+  })
+
+  window.addEventListener('camera-error', (error) => {
+      console.log('camera-error', error);
+  })
+
+AFRAME.registerComponent('registerevents', {
+  init: function () {
+    var marker = this.el;
+
+    marker.addEventListener('markerFound', function() {
+      var markerId = marker.id;
+      console.log('markerFound', markerId);
+      // TODO: Add your own code here to react to the marker being found.
+    });
+
+    marker.addEventListener('markerLost', function() {
+      var markerId = marker.id;
+      console.log('markerLost', markerId);
+      // TODO: Add your own code here to react to the marker being lost.
+    });
+  }
+});
+</script>
+
 </head>
+
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene 
   embedded 
