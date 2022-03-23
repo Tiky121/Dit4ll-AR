@@ -8,7 +8,6 @@
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
     <script src="play-all-model-animations.js"></script>
-    <script type='text/javascript' src='./aframe-ar-nft.js'></script>
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
@@ -30,34 +29,24 @@
     id = "AR IMAGE" 
     embedded 
     arjs 
-    xrextras-gesture-detector
-    landing-page
-    xrextras-loading
-    xrextras-runtime-error
     gesture-detector
     vr-mode-ui="enabled: false"
-    renderer="colorManagement: true"
-    xrweb="allowedDevices: any"
     >
       
     <a-entity light="type:directional; castShadow:true;" position="1 0 5"></a-entity>      
     <a-entity shadow="cast:true; receive:true">
     <a-plane position="0 0 -5" rotation="0 0 0" width="200" height="200" color = "#FFFFFF" opacity = 0.1 ></a-plane>
     </a-entity>
-        <a-marker preset='hiro' 
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        >
+
+        <a-marker preset='hiro'>
         <a-entity id="turbine" gltf-model="./wind_turbine.glb" scale= "0.8 0.8 0.8" position="0 1 0" play-all-model-animations class="clickable" gesture-handler shadow="cast:true; receive:false">
         </a-entity>
         <a-image src="world.png" scale= "0.5 0.25 0.5" position="0 1 1" rotation = "-90 0 0" onclick="setturbineworld()"></a-image>  
         </a-marker>
         <a-entity camera></a-entity>
 
-        <a-entity id="turbineworld" visible="true" clicker>
+        <a-entity id="turbineworld" visible="false" >
           <a-box color="white" position="0 0 -10" clicker></a-box>
-          <a-light id="ambient1" type="ambient" color="#4f6487" >
         </a-entity>
 
         <!--
