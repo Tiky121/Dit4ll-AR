@@ -21,7 +21,9 @@ button {
 	cursor: pointer;
 	text-transform: uppercase;
 	position: absolute;
-  	left: 200px;
+  	width: 10%;
+	height: 2%;
+	left: center;
   	top: 600px;
 }
 
