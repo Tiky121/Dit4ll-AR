@@ -59,6 +59,7 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     position: absolute;
-    left: 48%;
+    left: 46.5%;
     vertical-align: top;
+    border-radius: 12px;
   }
