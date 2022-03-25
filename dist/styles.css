@@ -59,6 +59,6 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     position: absolute;
-    left: 50%;
-    top: 95%;
+    left: 48%;
+    vertical-align: top;
   }

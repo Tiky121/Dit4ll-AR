@@ -18,12 +18,12 @@ a:hover {
 }
 
 button {
-	cursor: pointer;
-	text-transform: uppercase;
-	position: absolute;
-	left: 50%;
-  	top: 50%;
-}
+    cursor: pointer;
+    text-transform: uppercase;
+    position: absolute;
+    left: 48%;
+    top: 90%;
+  }
 
 #info {
 	position: absolute;
