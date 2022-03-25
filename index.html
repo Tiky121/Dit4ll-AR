@@ -21,17 +21,9 @@
           }
       });
     </script>
-
   </head>
 
   <body style='margin : 0px; overflow: hidden;'>
-
-    <div id="ui">
-      <button onclick="window.location.href='./turbine.html';">
-        Click Here
-      </button>
-    </div>
-
     <a-scene
     cursor="rayOrigin: mouse"
     raycaster="objects: [data-clickable]"
@@ -40,15 +32,16 @@
     gesture-detector
     vr-mode-ui="enabled: false"
     >
+    <div id="ui">
+      <button onclick="window.location.href='./turbine.html';">
+        Click Here
+      </button>
+    </div>
+
     <a-entity light="type:directional; castShadow:true;" position="1 0 5"></a-entity>      
-    <a-entity shadow="cast:true; receive:true">
-    <a-plane position="0 0 -5" rotation="0 0 0" width="200" height="200" color = "#FFFFFF" opacity = 0.1 ></a-plane>
-    </a-entity>
-    
     <a-marker preset="custom" type="pattern" url="https://raw.githubusercontent.com/Tiky121/AR-Dit4ll/main/pattern-windturbine.patt" position ="0 0 0" rotation = "0 0 -180">
         <a-entity id="turbine" gltf-model="./3D Models/Turbine/wind_turbine.glb" scale= "0.8 0.8 0.8" position="0 1 0" play-all-model-animations class="clickable" gesture-handler shadow="cast:true; receive:false">
         </a-entity>
-        <a-image id="turbinear"  src="world.png" scale= "0.5 0.25 0.5" position="0 1 1" rotation = "-90 0 0" onclick="turbine.html" data-clickable clicker></a-image>
         </a-marker>
         <a-entity camera></a-entity>
         <!--<a-entity id="turbineworld" visible="false" >
@@ -60,12 +53,5 @@
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
-    <script type="text/javascript"> 
-      function turbineworld() {
-        document.getElementById('turbine').setAttribute('visible', 'true')
-        document.getElementById('turbinear').setAttribute('visible', 'true')
-        document.getElementById('turbineworld').setAttribute('visible', 'false')
-      }
-    </script>
   </body>
 </html>
