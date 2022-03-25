@@ -21,10 +21,8 @@ button {
 	cursor: pointer;
 	text-transform: uppercase;
 	position: absolute;
-  	width: 10%;
-	height: 2%;
-	left: 300px;
-  	top: 600px;
+	left: 50%;
+  	top: 50%;
 }
 
 #info {
