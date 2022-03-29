@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Turbine World AR</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+    <!-- NOTE: you must adjust the paths as appropriate for your project -->
+    
+    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+
+  </head> 
+<body>
+  <div id="card">
+    <!-- All you need to put beautiful, interactive 3D content on your site: -->
+    <model-viewer src="./3D Models/Photovoltaikanlage/Photovoltaikanlage.glb"
+                  ios-src="./3D Models/Photovoltaikanlage/photovoltaikanlage.usdz"
+                  poster="./pictures/panel/panel.jpg"
+                  alt="Turbine"
+                  shadow-intensity="1"
+                  camera-controls
+                  auto-rotate ar>
+    </model-viewer>
+  </div>
+<div class="wrapper" >
+  <button onclick="window.location.href='./index.html';">
+    Back to Marker AR
+  </button>  
+</div>
+  <!-- 💁 Include both scripts below to support all browsers! -->
+
+  <!-- Loads <model-viewer> for modern browsers: -->
+  <script type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+</body>
+</html>
