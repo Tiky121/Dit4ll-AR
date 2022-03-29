@@ -22,10 +22,17 @@ button {
     cursor: pointer;
     text-transform: uppercase;
     position: absolute;
-    left: 48%;
-    top: 90%;
+	font-size: 18px;
+    left: 40%;
+    top: 80%;
 	border-radius: 50%;
 	border: none;
+	width:90px;
+	height:90px;
+	opacity: 0.9;
+	background-image: url(./pictures/button/world.png);
+	background-size: contain;
+	
   }
 
 #info {
