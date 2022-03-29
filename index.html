@@ -12,15 +12,7 @@
     <script src="./JS/gesture-handler.js"></script>
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://gftruj.github.io/webzamples/arjs/tracked-ui/tracked-ui.js"></script>
-    <script>
-      AFRAME.registerComponent('clicker', {
-          init: function() {
-              this.el.addEventListener('click', e => {
-                  alert('Teraz ste prepli do modu AR-WORLD');
-              });
-          }
-      });
-    </script>
+  
   </head>
 
   <body style='margin : 0px; overflow: hidden;'>
@@ -39,12 +31,16 @@
         </a-entity>
         </a-marker>
         <a-entity camera></a-entity>
-        <!--<a-entity id="turbineworld" visible="false" >
-          <a-box data-clickable color="white" position="0 0 -10" onclick="setScene1()"></a-box>
-        </a-entity>-->
         
         <a-marker smooth="true" preset='hiro' tracked-ui="element: #panelbut; offset: 0 200">
           <a-entity gltf-model="./3D Models/Photovoltaikanlage/Photovoltaikanlage.glb" scale= "0.16 0.5 0.16"  position="0 0 0" shadow="cast:true; receive:false" class="clickable" gesture-handler></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+
+        
+        <a-marker preset="custom" type="pattern" url="https://raw.githubusercontent.com/Tiky121/AR-Dit4ll/main/pattern-horizontal.patt" position ="0 0 0" tracked-ui="element: #horizonbut; offset: 0 200"> 
+          <a-entity id="turbine" gltf-model="./3D Models/Horizontal/horizontal.glb" scale= "0.8 0.8 0.8" position="0 1 0" play-all-model-animations class="clickable" gesture-handler shadow="cast:true; receive:false">
+          </a-entity>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
@@ -55,6 +51,10 @@
 
     <div id="panelbut">
       <button onclick="window.location.href='./panel.html';"></button>
+    </div>
+
+    <div id="horizonbut">
+      <button onclick="window.location.href='./horizon.html';"></button>
     </div>
 
   </body>
