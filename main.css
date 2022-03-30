@@ -28,7 +28,7 @@ button {
 	border: none;
 	width:90px;
 	height:90px;
-	opacity: 0.9;
+	opacity: 0.7;
 	background-image: url(./pictures/button/world.png);
 	background-size: contain;
   }
