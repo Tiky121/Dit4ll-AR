@@ -23,7 +23,6 @@ button {
     text-transform: uppercase;
     position: absolute;
 	font-size: 18px;
-    left: 50%;
     top: 80%;
 	border-radius: 50%;
 	border: none;
@@ -33,6 +32,13 @@ button {
 	background-image: url(./pictures/button/world.png);
 	background-size: contain;
   }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
 
 #info {
 	position: absolute;
